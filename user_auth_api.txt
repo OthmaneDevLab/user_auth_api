@@ -1,0 +1,15 @@
+
+composer require laravel/sanctum
+php artisan make:controller Api/AuthController
+php artisan make:controller PostController --api
+php artisan db:seed --class=PostSeeder
+php artisan db:seed
+php artisan migrate:fresh
+php artisan make:seeder PostSeeder 
+
+
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+php artisan make:controller PostController --api
+php artisan make:controller Api/AuthController
